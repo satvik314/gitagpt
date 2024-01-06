@@ -16,7 +16,7 @@ export default function Header() {
           <Image
             className="rounded-xl"
             src="/krishna.jpeg"
-            alt="Llama Logo"
+            alt="Srikrishna Logo"
             width={40}
             height={40}
             priority
