@@ -16,7 +16,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        {/* <footer style={{ textAlign: "center", color: "white", backgroundColor: "black", padding: "20px", fontSize: "18px" }}>
+          <p>© <a href="https://www.buildfastwithai.com" target="_blank" rel="noopener noreferrer" style={{ color: "white" }}>Build Fast with AI</a></p>
+        </footer> */}
+        <footer style={{ textAlign: "center", color: "white", backgroundColor: "black", padding: "20px", fontSize: "15px" }}>
+          <p>© <a href="https://www.buildfastwithai.com" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "none" }}>Build Fast with AI</a></p>
+        </footer>
+      </body>
     </html>
   );
 }
