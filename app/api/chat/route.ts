@@ -1,5 +1,5 @@
 import { Message, StreamingTextResponse } from "ai";
-import { MessageContent, OpenAI } from "llamaindex";
+import { MessageContent, ChatMessage, OpenAI } from "llamaindex";
 import { NextRequest, NextResponse } from "next/server";
 import { createChatEngine } from "./engine";
 import { LlamaIndexStream } from "./llamaindex-stream";
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     }
 
     const llm = new OpenAI({
-      model: process.env.MODEL || "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo",
       maxTokens: 512,
     });
 
@@ -53,9 +53,10 @@ export async function POST(request: NextRequest) {
       data?.imageUrl,
     );
 
+
     const response = await chatEngine.chat(
       lastMessageContent as MessageContent,
-      messages,
+      messages as ChatMessage[],
       true,
     );
 
