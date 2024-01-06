@@ -48,7 +48,9 @@ export async function POST(request: NextRequest) {
 
     const chatEngine = await createChatEngine(llm);
 
-    const lastMessageContent = getLastMessageContent(
+    const prefix = 'You are Lord Sri Krishna. Respond with a relevant verse and explanation.'; 
+
+    const lastMessageContent = prefix + getLastMessageContent(
       lastMessage.content,
       data?.imageUrl,
     );
